@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+
+<head>
+    <!-- Header -->
+    <title>Charm++ Workshop 2020</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="scripts/scripts.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="img/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #organizers {
+            background-color: #f3eff6;
+        }
+
+        #about {
+            background-color: #f3eff6;
+        }
+
+        #dates {
+            background-color: #f3eff6;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <!-- Navigation bar -->
+    <nav class="navbar is-transparent has-shadow is-fixed-top is-family-primary" role="navigation"
+        aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.shtml">
+                <img src="img/workshop_logo.png">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="index.shtml">
+                    Home
+                </a>
+
+                <a class="navbar-item" href="index.shtml#about">
+                    About
+                </a>
+
+                <a class="navbar-item" href="program.shtml">
+                    <font color="7c41a4"><strong>Program</strong></font>
+                </a>
+
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link">
+                        <font color="7c41a4"><strong>Information</strong></font>
+                    </a>
+
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item" href="index.shtml#dates">
+                            Important Dates
+                        </a>
+                        <a class="navbar-item" href="index.shtml#speakers">
+                            Keynote Speakers
+                        </a>
+                        <!--
+          <a class="navbar-item" href="travel.shtml">
+            Housing &amp; Transportation
+          </a>
+          -->
+                        <!--<hr class="navbar-divider">-->
+                    </div>
+                </div>
+
+                <a class="navbar-item" href="#organizers">
+                    Organizers
+                </a>
+
+                <a class="navbar-item" href="http://charm.cs.illinois.edu/workshops" target="_blank">
+                    Previous Workshops
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-warning modal-button" data-target="modal-abstract">
+                            <span class="icon">
+                                <i class="fas fa-scroll"></i>
+                            </span>
+                            <span>Call for Presentations</span>
+                        </a>
+                        <!--
+          <a class="button is-info" href="http://events.ncsa.illinois.edu/vts/video/AuditoriumStream.html" target="_blank">
+            <span class="icon">
+              <i class="fas fa-satellite-dish"></i>
+            </span>
+            <span><strong>Live Webcast</strong></span>
+          </a>
+          -->
+                        <!--
+          <a class="button is-info is-focused modal-button" data-target="modal-register">
+            <span class="icon">
+              <i class="fas fa-sign-in-alt"></i>
+            </span>
+            <span><strong>Register</strong></span>
+          </a>
+          -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Registration modal -->
+    <!-- Registration modal -->
+    <div class="modal is-family-primary" id="modal-register">
+        <div class="modal-background"></div>
+        <form action="https://formspree.io/jchoi157@illinois.edu" method="POST">
+            <div class="modal-card">
+                <header class="modal-card-head">
+                    <p class="modal-card-title">Registration</p>
+                    <!--<button class="delete" aria-label="close"></button>-->
+                </header>
+                <section class="modal-card-body">
+                    Due to COVID-19, this year's workshop will be held as a fully virtual event.<br>
+                    Please fill out the following form to register. Links to the online sessions will be sent to your
+                    email.<br>
+                    Note that a confirmation email will <strong>not</strong> be sent out with the new system.<br>
+                    <hr>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label is-normal">
+                            <label class="label">Personal Info</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" name="name" placeholder="Name">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label"></div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" name="affiliation" placeholder="Affiliation">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-building"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label"></div>
+                        <div class="field-body">
+                            <div class="field">
+                                <p class="control is-expanded has-icons-left">
+                                    <input class="input" type="text" name="email" placeholder="Email">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-envelope"></i>
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label">Interested in attending a half-day tutorial?</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field is-narrow">
+                                <div class="control is-expanded">
+                                    <label class="radio">
+                                        <input type="radio" name="tutorial" value="tutorial-yes">
+                                        Yes
+                                    </label>
+                                    <label class="radio">
+                                        <input type="radio" name="tutorial" value="tutorial-no">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="field is-horizontal">
+                        <div class="field-label">
+                            <label class="label">If yes, please select the topic of your interest:</label>
+                        </div>
+                        <div class="field-body">
+                            <div class="field is-narrow">
+                                <div class="control is-expanded">
+                                    <input type="checkbox" name="topic-charm"> Charm++&nbsp;
+                                    <input type="checkbox" name="topic-ampi"> AMPI&nbsp;
+                                    <input type="checkbox" name="topic-charm4py"> Charm4Py&nbsp;
+                                    <input type="checkbox" name="topic-projections"> Projections&nbsp;
+                                    <input type="checkbox" name="topic-other"> Other<input class="input is-small"
+                                        type="text" name="topic-other-text" placeholder="Other topics of interest">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <hr>
+                        Please <a href="mailto:mdiener@illinois.edu">send us an email</a> if you have any questions.
+                    </div>
+                </section>
+                <footer class="modal-card-foot">
+                    <button class="button is-success" type="submit">Submit</button>
+                    <!--<button class="button">Cancel</button>-->
+                </footer>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- Call for abstracts modal -->
+    <!-- Call for presentations modal -->
+    <div class="modal is-family-primary" id="modal-abstract">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Call for Presentations</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                Authors are invited to submit abstracts or short papers describing research and development
+                in the broad themes of parallel processing emphasized by Charm++, AMPI, and Charm4Py including
+                runtime adaptivity, message-driven execution, automated resource management, and application
+                development.<br>
+                <hr>
+                Some specific topics of interest include:<br>
+                <dl>
+                    <li>Parallel algorithms and applications, especially those using Charm++, AMPI, and Charm4Py</li>
+                    <li>Parallel libraries and frameworks, especially those supporting runtime adaptivity</li>
+                    <li>Novel parallel programming models and abstractions</li>
+                    <li>Adaptive runtime management, including communication, power, energy, and heat</li>
+                    <li>Dynamic load balancing</li>
+                    <li>Within-node parallelism, tasks, and accelerators</li>
+                    <li>Fault tolerance and resilience</li>
+                    <li>Tools and techniques for performance analysis, tuning and debugging</li>
+                    <li>Extensions and new features in Charm++</li>
+                    <li>Massively parallel processing on future machines</li>
+                </dl>
+                <hr>
+                Submissions should be in the form of <strong>extended abstracts ranging 1-3 pages</strong>.<br>
+                The <em>presentations</em> will be posted at the workshop website, but there will be no published
+                proceedings.<br>
+                Authors are encouraged to publish them in other conferences or journals.<br><br>
+                Abstracts should be submitted through <a href="https://easychair.org/conferences/?conf=charm20"
+                    target="_blank">EasyChair</a> by the deadline, <strong>September 15, 2020</strong>.<br>
+                We ask that authors who submitted their abstract in Spring by email resubmit through EasyChair.<br>
+                Early submission is welcome and will expedite the reviewing process.<br>
+                Authors of early submissions will be notified of their acceptance as soon as possible.<br><br>
+                Please contact <a href="mailto:mdiener@illinois.edu">Matthias Diener</a> if you have any questions.<br>
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button">Close</button>
+            </footer>
+        </div>
+    </div>
+
+
+    <!--
+    <section class="section is-family-primary">
+      <div class="container">
+        <p class="title">How to Participate</p>
+        <p class="is-size-5">
+          Zoom link: <a href="https://illinois.zoom.us/j/84184374012">https://illinois.zoom.us/j/84184374012</a>
+          <br>
+          Password: <strong>charm2020</strong> (case-sensitive)
+          <br>
+          YouTube live streaming: <font color="f1c40f"><a href="http://www.youtube.com/watch?v=7qClgf-it2U">http://www.youtube.com/watch?v=7qClgf-it2U</a></font>
+        </p>
+      </div>
+    </section>
+
+    <hr>
+    -->
+
+    <section class="section is-family-primary">
+        <div class="container">
+            <p class="subtitle">Workshop Program</p>
+            <p class="title">October 20 (Tue)</p><br>
+            <table class="table is-bordered is-hoverable is-fullwidth">
+                <thead class="has-background-warning">
+                    <tr>
+                        <th>Time (CDT, UTC-5)</th>
+                        <th>Type</th>
+                        <th>Title</th>
+                        <th>Speaker</th>
+                        <th>Affiliation</th>
+                        <th>Slides</th>
+                        <th>Video</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="7"><strong>Session: Keynote I (Chair: Laxmikant V. Kale)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>09:00 - 09:20</td>
+                        <td colspan="2">Opening Remarks</td>
+                        <td>Laxmikant V. Kale</td>
+                        <td>University of Illinois Urbana-Champaign</td>
+                        <td></td>
+                        <td><a href="https://uofi.box.com/s/cu3k9sr2fsmu1xxj1ey7fjx70x9cltwm">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>09:20 - 10:20</td>
+                        <td><strong>
+                                <font color="7c41a4">Keynote</font>
+                            </strong></td>
+                        <td><a href="#keynote_1"><strong>Preparing for Extreme Heterogeneity in High Performance
+                                    Computing</strong></a></td>
+                        <td>Jeffrey S. Vetter</td>
+                        <td>Oak Ridge National Laboratory</td>
+                        <td><a href="slides/vetter.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/493jl62o5a7rehyysx6rz1upt27827e1">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>10:20 - 10:40</td>
+                        <td colspan="6">Break</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><strong>Session: Asynchronous Applications (Chair: Justin Szaday)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>10:40 - 11:10</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_pandare">Asynchronous Distributed-Memory Task-Parallel Algorithm for
+                                Compressible Flows on 3D Unstructured Grids</a></td>
+                        <td>Aditya Pandare</td>
+                        <td>Los Alamos National Laboratory</td>
+                        <td><a href="slides/pandare.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/hmknvvpgwagml4xzxko01c3mb7ni3h23">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>11:10 - 11:40</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_mikida">Asynchronous Distributed-Memory Task-Parallel 3D Unstructured
+                                Mesh-to-Mesh Data Transfer</a></td>
+                        <td>Eric Mikida</td>
+                        <td>Charmworks, Inc.</td>
+                        <td></td>
+                        <td><a href="https://uofi.box.com/s/n9q02r8azq9ic8g9725jktgmgb2s36yb">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>11:40 - 12:10</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_rauchwerger">Bounded Asynchrony and Nested Parallelism for Scalable Graph
+                                Processing</a></td>
+                        <td>Lawrence Rauchwerger</td>
+                        <td>University of Illinois Urbana-Champaign</td>
+                        <td></td>
+                        <td><a href="https://uofi.box.com/s/rnp0cc59f9d00hi8kalombn9s5sa6w5z">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>12:10 - 13:00</td>
+                        <td colspan="6">Lunch Break</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><strong>Session: Astrophysical Simulations (Chair: Sam White)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>13:00 - 13:30</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_bordner">Enzo-E/Cello Computational Astrophysics and Cosmology</a></td>
+                        <td>James Bordner</td>
+                        <td>University of California, San Diego</td>
+                        <td><a href="slides/bordner.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/t3w16ljfl6ss0cdul2jfec2tm9m2lqhg">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>13:30 - 14:00</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_chang">Moving-mesh Hydrodynamics in ChaNGa</a></td>
+                        <td>Philip Chang</td>
+                        <td>University of Wisconsin-Milwaukee</td>
+                        <td><a href="slides/chang.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/8b1m3v5zl2gy2fu5nlgzb1t8xuo1n67g">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 14:30</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_hebert">SpECTRE: Toward Simulations of Binary Black Hole Mergers Using
+                                Charm++</a></td>
+                        <td>Francois Hebert</td>
+                        <td>Caltech</td>
+                        <td><a href="slides/hebert.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/o1g3h55ss14s3wm9z8jgyghrw9wcko79">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>14:30 - 14:50</td>
+                        <td colspan="6">Break</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><strong>Session: Quantum Chemistry (Chair: Eric Bohm)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>14:50 - 15:20</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_martyna">Projector Augmented Wave based Kohn-Sham Density Functional Theory
+                                Simulations with Reduced Order Scaling</a></td>
+                        <td>Glenn Martyna</td>
+                        <td>Pimpernel Science, Software and Information Technology</td>
+                        <td><a href="slides/martyna.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/yavktmx2kdmcp1ozat1q4vel2rufq18d">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>15:20 - 15:50</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_chandrasekar">Scalable GW software for excited electrons using OpenAtom</a>
+                        </td>
+                        <td>Kavitha Chandrasekar,<br>Kayahan Saritas</td>
+                        <td>University of Illinois Urbana-Champaign,<br>Yale University</td>
+                        <td><a href="slides/saritas.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/liiqdfrs50h7htjeco6q6jjrcibao8fe">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><strong>Session: Adaptive MPI &amp; Parallel Tasks (Chair: Matthias
+                                Diener)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>15:50 - 16:20</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_bohm">Hurricane Storm Surge Analysis and Prediction Using ADCIRC-CG and
+                                AMPI</a></td>
+                        <td>Joannes Westerink,<br>Eric Bohm</td>
+                        <td>Notre Dame University,<br>University of Illinois Urbana-Champaign</td>
+                        <td><a href="slides/westerink.pdf">Slides-1</a> <a href="slides/bohm.pdf">Slides-2</a></td>
+                        <td><a href="https://uofi.box.com/s/53iktq88oknsv9bwfutnj6pqmyb66p03">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>16:20 - 16:50</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_white">Recent Progress on Adaptive MPI</a></td>
+                        <td>Samuel White,<br>Evan Ramos</td>
+                        <td>University of Illinois Urbana-Champaign,<br>Charmworks, Inc.</td>
+                        <td><a href="slides/white.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/amoey8rr03me5gzaeav9uxzp856wsb3y">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>16:50 - 17:20</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_robson">Flexible Hierarchical Execution of Parallel Task Loops</a></td>
+                        <td>Michael Robson,<br>Kavitha Chandrasekar</td>
+                        <td>Villanova University,<br>University of Illinois Urbana-Champaign</td>
+                        <td><a href="slides/robson.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/16imx4ao7lutrnts4cxl72pvem7j10bd">Video</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="section is-family-primary">
+        <div class="container">
+            <p class="subtitle">Workshop Program</p>
+            <p class="title">October 21 (Wed)</p><br>
+            <table class="table is-bordered is-hoverable is-fullwidth">
+                <thead class="has-background-warning">
+                    <tr>
+                        <th>Time (CDT, UTC-5)</th>
+                        <th>Type</th>
+                        <th>Title</th>
+                        <th>Speaker</th>
+                        <th>Affiliation</th>
+                        <th>Slides</th>
+                        <th>Video</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="7"><strong>Session: Keynote II (Chair: Laxmikant V. Kale)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>09:00 - 10:00</td>
+                        <td><strong>
+                                <font color="7c41a4">Keynote</font>
+                            </strong></td>
+                        <td><a href="#keynote_2"><strong>Asynchronous Programming in Modern C++</strong></a></td>
+                        <td>Hartmut Kaiser</td>
+                        <td>Louisiana State University</td>
+                        <td><a href="slides/kaiser.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/lrfxkgzsm1rne04ctmf8drj1zh00h952">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><strong>Session: Adaptive Runtime (Chair: Ronak Buch)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>10:00 - 10:30</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_lifflander">Design and Implementation Techniques for an MPI-Oriented AMT
+                                Runtime</a></td>
+                        <td>Jonathan Lifflander</td>
+                        <td>Sandia National Labs</td>
+                        <td><a href="slides/lifflander.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/6j9s7b9kypu27ynzh2skasqo6kzr4djl">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>10:30 - 11:00</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_pilla">Efforts to Bridge Theory and Practice on Distributed Scheduling
+                                Algorithms</a></td>
+                        <td>Laercio L. Pilla</td>
+                        <td>Laboratoire de Recherche en Informatique, Univ. Paris-Sud - CNRS</td>
+                        <td><a href="slides/pilla.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/emngyf49mw2b7lp3gntu9hrvvev3pvnn">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>11:00 - 11:20</td>
+                        <td colspan="6">Break</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><strong>Session: Performance &amp; Languages (Chair: Zane Fink)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>11:20 - 11:50</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_bhatele">Analyzing Call Graphs using Hatchet</a></td>
+                        <td>Abhinav Bhatele</td>
+                        <td>University of Maryland</td>
+                        <td></td>
+                        <td><a href="https://uofi.box.com/s/01x6yk0lcy283k1dllqoos1qyd3wq27c">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>11:50 - 12:20</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_choi">Achieving Computation-Communication Overlap with Overdecomposition on
+                                GPU Systems</a></td>
+                        <td>Jaemin Choi</td>
+                        <td>University of Illinois Urbana-Champaign</td>
+                        <td><a href="slides/choi.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/7nd4uix8nbahhkungzemkwobzm3ujmh2">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>12:20 - 12:50</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_szaday">Advances in Charm++-based Languages</a></td>
+                        <td>Justin Szaday</td>
+                        <td>University of Illinois Urbana-Champaign</td>
+                        <td></td>
+                        <td><a href="https://uofi.box.com/s/7d17jdzn7eh739hsmyyaalt6ddkecqdj">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>12:50 - 14:00</td>
+                        <td colspan="6">Lunch Break</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><strong>Session: Keynote III (Chair: Laxmikant V. Kale)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>14:00 - 15:00</td>
+                        <td><strong>
+                                <font color="7c41a4">Keynote</font>
+                            </strong></td>
+                        <td><a href="#keynote_3"><strong>Towards Performance Tools for Emerging GPU-Accelerated Exascale
+                                    Supercomputers</strong></a></td>
+                        <td>John Mellor-Crummey</td>
+                        <td>Rice University</td>
+                        <td><a href="slides/mellor-crummey.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/pse57qgvxkghmhlwp2jqywackalbzfr6">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><strong>Session: Load Balancing &amp; Molecular Dynamics (Chair: Kavitha
+                                Chandrasekar)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>15:00 - 15:30</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_miller">Advances in VT's load balancing infrastructure and algorithms</a>
+                        </td>
+                        <td>Phil Miller</td>
+                        <td>Intense Computing</td>
+                        <td><a href="slides/miller.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/qd69qjfpn3cb5q3xgnm4a7nw5fym8wr5">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>15:30 - 16:00</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_buch">Vector Load Balancing in Charm++</a></td>
+                        <td>Ronak Buch</td>
+                        <td>University of Illinois Urbana-Champaign</td>
+                        <td><a href="slides/buch.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/96vost18ajnoaa0ynbxhbep7i3dut2ti">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>16:00 - 16:30</td>
+                        <td>Talk</td>
+                        <td><a href="#talk_hardy">Improving NAMD Performance and Scaling on Heterogeneous
+                                Architectures</a></td>
+                        <td>David Hardy,<br>Julio Maia</td>
+                        <td>University of Illinois Urbana-Champaign</td>
+                        <td><a href="slides/hardy.pdf">Slides</a></td>
+                        <td><a href="https://uofi.box.com/s/v7vtkz3auk6d3mtb9hnyy20cradsxfll">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td colspan="7"><strong>Session: Charm++ Discussion (Chair: Eric Bohm)</strong></td>
+                    </tr>
+                    <tr>
+                        <td>16:30 - 17:00</td>
+                        <td>Discussion</td>
+                        <td>Charm++ Release 6.11</td>
+                        <td>Eric Bohm</td>
+                        <td>University of Illinois Urbana-Champaign</td>
+                        <td></td>
+                        <td><a href="https://uofi.box.com/s/721u3mceqzojpom5qyrssj3m8qae9by0">Video</a></td>
+                    </tr>
+                    <tr>
+                        <td>17:00 - 17:20</td>
+                        <td colspan="2">Closing Remarks</td>
+                        <td>Laxmikant V. Kale</td>
+                        <td>University of Illinois Urbana-Champaign</td>
+                        <td></td>
+                        <td><a href="https://uofi.box.com/s/xe85lb9uuc47gnddkazp7w5cu5zedygt">Video</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- Abstracts -->
+    <section class="section is-family-primary">
+        <div class="container">
+            <p class="title is-2">List of Talks</p><br>
+            <p id="keynote_1">
+                <font color="7c41a4">Keynote</font>
+            </p>
+            <p class="title">Preparing for Extreme Heterogeneity in High Performance Computing</p>
+            <p class="subtitle">Jeffrey S. Vetter, Oak Ridge National Laboratory</p>
+            <p>While computing technologies have remained relatively stable for nearly two decades, new architectural
+                features, such as heterogeneous cores, deep memory hierarchies, non-volatile memory (NVM), and
+                near-memory processing, have emerged as possible solutions to address the concerns of energy-efficiency
+                and cost. However, we expect this 'golden age' of architectural change to lead to extreme heterogeneity
+                and it will have a major impact on software systems and applications. Software will need to be
+                redesigned to exploit these new capabilities and provide some level of performance portability across
+                these diverse architectures. In this talk, I will survey these emerging technologies, discuss their
+                architectural and software implications, and describe several new approaches (e.g., domain specific
+                languages, intelligent runtime systems) to address these challenges.</p>
+
+            <hr>
+            <p id="keynote_2">
+                <font color="7c41a4">Keynote</font>
+            </p>
+            <p class="title">Asynchronous Programming in Modern C++</p>
+            <p class="subtitle">Hartmut Kaiser, Louisiana State University</p>
+            <p>With the advent of modern computer architectures characterized by many-core nodes, deep and complex
+                memory hierarchies, heterogeneous subsystems, and power-aware components, it is becoming increasingly
+                difficult to achieve best possible application scalability and satisfactory parallel efficiency. The
+                community is experimenting with new programming models that rely on finer-grain parallelism, flexible
+                and lightweight synchronization, combined with work-queue-based, message-driven computation. The
+                recently growing interest in the C++ programming language increases the demand for libraries
+                implementing those programming models for the language. We present a new asynchronous C++ parallel
+                programming model that is built around lightweight tasks and mechanisms to orchestrate massively
+                parallel and distributed execution. This model uses the concept of Futures to make data dependencies
+                explicit, employs explicit and implicit asynchrony to hide latencies and to improve utilization, and
+                manages finer-grain parallelism with a work-stealing scheduling system enabling automatic load balancing
+                of tasks. We have developed and implemented such a model as a C++ library exposing a higher-level
+                parallelism API that is fully conforming to the existing C++11/14/17 standards and is aligned with the
+                ongoing standardization work. This API and programming model has shown to enable writing highly
+                efficient parallel applications for heterogeneous resources with excellent performance and scaling
+                characteristics.</p>
+
+            <hr>
+            <p id="keynote_3">
+                <font color="7c41a4">Keynote</font>
+            </p>
+            <p class="title">Towards Performance Tools for Emerging GPU-Accelerated Exascale Supercomputers</p>
+            <p class="subtitle">John Mellor-Crummey, Rice University</p>
+            <p>To tune applications for emerging exascale supercomputers, application developers need tools that measure
+                the performance of applications on GPU-accelerated platforms and attribute application performance back
+                to program source code. This talk will describe work in progress developing extensions to Rice
+                University's HPCToolkit performance tools to support measurement and analysis of GPU-accelerated
+                applications on current supercomputers based on NVIDIA GPUs and forthcoming exascale systems based on
+                AMD and Intel GPUs. At present, HPCToolkit's support for NVIDIA's GPUs is the most mature. To help
+                developers understand the performance of accelerated applications as a whole, HPCToolkit's measurement
+                and analysis tools attribute metrics to calling contexts that span both CPUs and GPUs. HPCToolkit
+                measures both profiles and traces of GPU execution. To measure GPU-accelerated applications efficiently,
+                HPCToolkit employs novel wait-free data structures to coordinate monitoring and attribution of GPU
+                performance metrics. To help developers understand the performance of complex GPU code generated from
+                high-level template-based programming models, HPCToolkit's hpcprof constructs sophisticated
+                approximations of call path profiles for GPU computations. To support fine-grain analysis and tuning,
+                HPCToolkit uses platform-dependent hardware and software measurement capabilities to attribute GPU
+                performance metrics to source lines and loops. We illustrate HPCToolkit's emerging capabilities for
+                analyzing GPU-accelerated applications with several case studies.</p>
+
+            <hr>
+            <p id="talk_choi" class="title">Achieving Computation-Communication Overlap with Overdecomposition on GPU
+                Systems</p>
+            <p class="subtitle">Jaemin Choi, University of Illinois Urbana-Champaign</p>
+            <p>The landscape of high performance computing is
+                shifting towards a collection of multi-GPU nodes, widening
+                the gap between on-node compute and off-node communication
+                capabilities. Consequently, the ability to tolerate communication
+                latencies and maximize utilization of the compute hardware are
+                becoming increasingly important in achieving high performance.
+                Overdecomposition, which enables a logical decomposition of the
+                problem domain without being constrained by the number of
+                processors, has been successfully adopted on traditional CPU-based
+                systems to achieve computation-communication overlap,
+                significantly reducing the impact of communication on performance.
+                However, it has been unclear whether overdecomposition
+                can provide the same benefits on modern GPU systems, especially
+                given the perceived overheads associated with smaller kernels
+                that overdecomposition entails. In this work, we address the challenges
+                in applying overdecomposition to GPU-accelerated applications
+                and ensuring asynchronous progress of GPU operations
+                using the Charm++ parallel programming system. Combining
+                prioritization of communication in the application and support
+                for asynchronous progress in the runtime system, we obtain
+                improvements in overall performance of up to 50% and 47%
+                with proxy applications Jacobi3D and MiniMD, respectively.</p>
+
+            <hr>
+            <p id="talk_buch" class="title">Vector Load Balancing in Charm++</p>
+            <p class="subtitle">Ronak Buch, University of Illinois Urbana-Champaign</p>
+            <p>Load balancing has been a fundamental tenet of Charm++ for a long while, but it has been limited in the
+                amount of data available to it. Recently, we have added support for vector load balancing, a scheme in
+                which the runtime system and/or the user record multiple load metrics (e.g. recording separate,
+                orthogonal phases of execution or CPU and GPU load). This enables the load balancing system to make more
+                precise adjustments of objects and improve the quality of its placement decisions. Doing so has required
+                an overhaul of the load balancing infrastructure, APIs, and strategies in Charm++, which we will
+                discuss.</p>
+
+            <hr>
+            <p id="talk_chang" class="title">Moving-mesh Hydrodynamics in ChaNGa</p>
+            <p class="subtitle">Philip Chang, University of Wisconsin-Milwaukee<br>Zachariah Etienne, West Virginia
+                University</p>
+            <p>Moving-mesh hydrodynamics has changed the face of numerical simulation of galaxies and structure
+                formation over the last 10 years. In this talk, I discuss the design and construction of moving-mesh
+                hydrodynamic algorithms as applied to dynamical stellar problems. In particular, I will briefly describe
+                the construction of Voronoi meshes and the application of unstructured moving-meshes to solving
+                flux-conservative equations and the challenges to strong scalability. I will also very briefly describe
+                recent results obtained by my group using the MANGA code, the moving-mesh hydrodynamics solver for
+                ChaNGa. I will discuss results obtained for common-envelope evolution and tidal disruption events. I
+                will close with brief discussion of the extension of these moving-mesh algorithms toward general
+                relativistic hydrodynamics with an eye toward moving-mesh NS-NS and NS-BH simulations.</p>
+
+            <hr>
+            <p id="talk_martyna" class="title">Projector Augmented Wave based Kohn-Sham Density Functional Theory
+                Simulations with Reduced Order Scaling</p>
+            <p class="subtitle">Glenn Martyna, Pimpernel Science, Software and Information Technology</p>
+            <p>Currently, our massively parallel implementation of Kohn-Sham Density Functional Theory (KS-DFT)
+                implemented in the OpenAtom software under Charm++ employs norm-conserving non-local pseudopotentials to
+                describe the electron-ion interactions. While sufficient to examine many interesting systems of
+                technological and scientific interest, it cannot address the electronic properties of heavy elements
+                such as iron and copper efficiently due to the requirement of a large basis set or equivalently a large
+                plane-wave cutoff to describe the electronic states. The Projector Augmented Wave approach (PAW) in
+                contrast has many important features such as: (1) less demanding plane-wave cutoff energy due to the
+                splitting of delocalized and core parts of the electron wavefunctions and (2) direct access to the
+                core-states if needed for NMR and other related responses. However, traditional PAW based KS-DFT scales
+                as ~N3 and the parallel performance is quite poor. To solve this problem, we developed a PAW based
+                KS-DFT in OpenAtom with ~N2logN scaling enabled by Euler Exponential Spline (EES) and FFTs to form a 4
+                grid multi-resolution method. We increase the accuracy of the long-range interactions by applying Ewald
+                summation methods to the Hartree and external interactions. Our development inherits all the merits of
+                the PAW method with significantly higher efficiency and builds naturally on our previous charm++
+                implementation.</p>
+
+            <hr>
+            <p id="talk_pandare" class="title">Asynchronous Distributed-Memory Task-Parallel Algorithm for Compressible
+                Flows on 3D Unstructured Grids</p>
+            <p class="subtitle">Jozsef Bakosi, Los Alamos National Laboratory<br>Marc Charest, Los Alamos National
+                Laboratory<br>Aditya Pandare, Los Alamos National Laboratory<br>Jacob Waltz, Los Alamos National
+                Laboratory</p>
+            <p>We discuss the implementation of a finite element method, used to numerically solve the Euler equations
+                of compressible flows, using an asynchronous runtime system (RTS). The algorithm is implemented for
+                distributed-memory machines, using unstructured 3D meshes, combining data-, and task-parallelism on top
+                of the Charm++ RTS. Charm++'s execution model is asynchronous by default, allowing arbitrary overlap of
+                computation and communication. Task-parallelism allows scheduling parts of an algorithm independently
+                of, or dependent on, each other. Built-in automatic load balancing enables continuous redistribution of
+                computational load by migration of work units based on real-time CPU load measurement. The RTS also
+                features automatic checkpointing, fault tolerance, resilience against hardware failures, and supports
+                power-, and energy-aware computation. We demonstrate scalability up to O(10^9) cells at O(10^4) compute
+                cores and the benefits of automatic load balancing for irregular workloads. The full source code with
+                documentation is available at https://quinoacomputing.org.</p>
+
+            <hr>
+            <p id="talk_mikida" class="title">Asynchronous Distributed-Memory Task-Parallel 3D Unstructured Mesh-to-Mesh
+                Data Transfer</p>
+            <p class="subtitle">Eric Mikida, Charmworks, Inc.<br>Nitin Bhat, Charmworks, Inc.<br>Eric Bohm, Charmworks,
+                Inc.<br>Laxmikant Kale, Charmworks, Inc.<br>Jozsef Bakosi, Los Alamos National Laboratory</p>
+            <p>We are developing a distributed-memory-parallel adaptive multiphysics simulation software tool,
+                co-designing physics solvers and advanced load balancing techniques. Our target application is
+                fluid-structure interaction of large engineering problems, O(10^7) mesh cells, for O(10^4) CPUs. We will
+                use overset unstructured mesh methods to compute structural mechanics of solids interacting with
+                compressible fluids within complex 3D geometries. To couple fluid and solid mechanics solvers, we are
+                implementing a two-way data transfer algorithm on top of the Charm++ asynchronous tasking runtime system
+                (https://www.hpccharm.com). We will report on the initial implementation and scalability of a
+                mesh-to-mesh solution data transfer algorithm that will be used as a library, coupling physics solvers
+                in Quinoa (https://quinoacomputing.org), developed at Los Alamos National Laboratory.</p>
+
+            <hr>
+            <p id="talk_chandrasekar" class="title">Scalable GW software for excited electrons using OpenAtom</p>
+            <p class="subtitle">Kavitha Chandrasekar, University of Illinois Urbana-Champaign<br>Kayahan Saritas, Yale
+                University</p>
+            <p>OpenAtom is an open-source, massively parallel software application that performs ab initio molecular
+                dynamics simulations and ground and excited states calculations utilizing a planewave basis set and
+                relies on the charm++ runtime system. We describe the status of the excited-state GW implementation in
+                OpenAtom: the GW method is an accurate but computationally expensive method for describing dynamics of
+                excited electrons in solid state systems. We briefly describe the current O(N^4) scaling GW method
+                implemented in the public version of OpenAtom (where N is the number of atoms in the simulation cell).
+                We then present our progress in implementing an O(N^3) scaling GW method in OpenAtom. In addition to the
+                formalism and physical principles, our parallelization method and scaling results will be presented.</p>
+
+            <hr>
+            <p id="talk_szaday" class="title">Advances in Charm++-based Languages</p>
+            <p class="subtitle">Justin Szaday, University of Illinois Urbana-Champaign</p>
+            <p>Charj, a general-purpose language for parallel computing based on Charm++, has had many advances since it
+                was last discussed at the Charm++ workshop. Its most recent iteration of the language has a Scala-like
+                syntax, and boasts a variety of features supported by static analysis. Included among these features are
+                embedded domain-specific languages for orchestration (i.e. Charisma) and the Multiphase Shared Arrays
+                (MSA) Charm++ library. This presentation will provide an overview of these topics, and our language
+                development plans going forward.</p>
+
+            <hr>
+            <p id="talk_bordner" class="title">Enzo-E/Cello Computational Astrophysics and Cosmology</p>
+            <p class="subtitle">James Bordner, University of California, San Diego<br>Michael Norman, University of
+                California, San Diego</p>
+
+
+            Enzo-E is an adaptive mesh refinement (AMR) astrophysics and cosmology application, and Cello is the AMR
+            framework on which Enzo-E is built. Enzo-E supports an increasingly rich collection of physics kernels,
+            including hydrodynamics, self-gravity, cosmological expansion, chemistry and cooling, and
+            magnetohydrodynamics. Enzo-E's physics kernels are implemented on top of Cello's fully-distributed
+            array-of-octree AMR hierarchy, which is in turn represented using a Charm++ chare array of blocks. We are
+            currently in the final stages of implementing and testing the last functionality required to run large-scale
+            cosmological structure formation simulations that include both dark matter and baryonic matter. These latest
+            features include scalable gravity, robust ghost-zone refresh, flux-correction, and improved interpolation.
+            After the last of these is completed, Enzo-E/Cello will begin its production phase, running scientifically
+            viable astrophysics and cosmology simulations on some of the largest HPC platforms available today.
+
+            <hr>
+            <p id="talk_lifflander" class="title">Design and Implementation Techniques for an MPI-Oriented AMT Runtime
+            </p>
+            <p class="subtitle">Jonathan Lifflander, Sandia National Labs<br>Phil Miller, Intense Computing<br>Nicole
+                Lemaster Slattengren, Sandia National Labs<br>
+                Nicolas Morales, Sandia National Labs<br>Paul Stickney, NexGen Analytics, Inc.<br>Philippe P. Pebay,
+                NexGen Analytics, Inc.</p>
+            <p>We present the execution model of Virtual Transport (VT) a new, Asynchronous Many-Task (AMT) runtime
+                system that provides unprecedented integration and interoperability with MPI. We have developed VT in
+                conjunction with large production applications to provide a highly incremental, high-value path to AMT
+                adoption in the dominant ecosystem of MPI applications, libraries, and developers. Our aim is that the
+                'MPI+X' model of hybrid parallelism can smoothly extend to become 'MPI+VT +X'. We illustrate a set of
+                design and implementation techniques that have been useful in building VT. We believe that these ideas
+                and the code embodying them will be useful to others building similar systems, and perhaps provide
+                insight to how MPI might evolve to better support them. We motivate our approach with two applications
+                that are adopting VT and have begun to benefit from increased asynchrony and dynamic load balancing.</p>
+
+            <hr>
+            <p id="talk_miller" class="title">Advances in VT's load balancing infrastructure and algorithms</p>
+            <p class="subtitle">Jonathan Lifflander, Sandia National Labs<br>Phil Miller, Intense Computing<br>Philippe
+                Pebay, NexGen Analytics</p>
+            <p>We present major changes to our load balancing runtime infrastructure to make load balancing algorithms
+                more adaptable/customizable for applications of interest. We discuss the design and implementation of
+                load models as a mechanism for applications to provide more control over how raw instrumented data is
+                presented to the runtime system and used to redistribute workloads.</p>
+
+            <hr>
+            <p id="talk_bhatele" class="title">Analyzing Call Graphs using Hatchet</p>
+            <p class="subtitle">Abhinav Bhatele, University of Maryland</p>
+            <p>Performance analysis is critical for eliminating scalability bottlenecks in parallel codes. There are
+                many profiling tools that can instrument codes and gather performance data. However, analytics and
+                visualization tools that are general, easy to use, and programmable are limited. In this talk, we focus
+                on the analytics of structured profiling data, such as that obtained from calling context trees or
+                nested region timers in code. We present a set of techniques and operations that build on the pandas
+                data analysis library to enable analysis of parallel profiles. We have implemented these techniques in a
+                Python-based library called Hatchet that allows structured data to be filtered, aggregated, and pruned.
+                Using performance datasets obtained from profiling parallel codes, we demonstrate performing common
+                performance analysis tasks reproducibly with a few lines of Hatchet code. Hatchet brings the power of
+                modern data science tools to bear on performance analysis.</p>
+
+            <hr>
+            <p id="talk_hebert" class="title">SpECTRE: Toward Simulations of Binary Black Hole Mergers Using Charm++</p>
+            <p class="subtitle">Francois Hebert, Caltech</p>
+            <p>Recent groundbreaking observations have led to a new era for the study of black holes and neutron stars.
+                The Advanced LIGO and Virgo gravitational-wave observatories have measured gravitational waves from
+                merging pairs of black holes and neutron stars, proving that these systems exist in nature and enabling
+                us to study them in detail. The Event Horizon Telescope has directly imaged the accretion flows around
+                the supermassive black hole at the center of the galaxy M87, giving us a new look into these extreme
+                environments. To interpret these observations, however, we rely on simulations to bridge the gap between
+                the highly non-linear governing physics equations and the signals seen in our instruments. Improving the
+                accuracy of simulation methods, as well as their parallelization on large future supercomputers, will be
+                a step key to improving the science output from future observations.</p>
+            <p>SpECTRE is a next-generation multi-physics code implemented using Charm++, designed to improve on the
+                accuracy and scaling limitations of current codes in relativistic astrophysics. SpECTRE solves the
+                governing equations --general relativistic magnetohydrodynamics for the matter and/or Einstein's
+                equations for dynamical spacetimes-- using a discontinuous Galerkin method. The DG method provides the
+                accuracy of high-order spectral-type methods where the solution is smooth, with various robust
+                shock-capturing methods available near discontinuities (e.g., shocks in the matter). SpECTRE uses
+                task-based parallelism implemented using Charm++, and gets excellent scaling to hundreds of thousands of
+                processors.</p>
+            <p>In this talk, I will provide an overview of SpECTRE and the algorithms we've implemented. I will give an
+                update on our progress toward simulating binary black hole mergers, highlighting a simulation of the
+                initial "inspiral" phase of the evolution before the black holes merge. I will present our initial
+                investigations into load-balancing and checkpoint-restarting using Charm++'s built-in features,
+                highlighting successes and challenges we've faced and features we would like to see in Charm++. Finally,
+                I will outline future development plans and science goals.</p>
+
+            <hr>
+            <p id="talk_pilla" class="title">Efforts to Bridge Theory and Practice on Distributed Scheduling Algorithms
+            </p>
+            <p class="subtitle">Laercio L. Pilla, Laboratoire de Recherche en Informatique, Univ. Paris-Sud -
+                CNRS<br>Johanne Cohen, Laboratoire de Recherche en Informatique, Univ. Paris-Sud - CNRS</p>
+            <p>In this talk, we discuss some of our recent work on the subject of distributed scheduling algorithms for
+                high-performance computing applications.
+                We have detected that distributed scheduling algorithms are not very commonly found in contemporaneous
+                runtime systems, whereas many more scheduling algorithms are found in the literature.
+                These distributed scheduling algorithms are usually based on simple models using little to no
+                information, which leads to scenarios which are far from what are able to achieve in our runtime
+                systems.
+                We present some of our initial steps on the adaptation of a distributed scheduling algorithm to use
+                basic global information (the average resource load) and we detail simulation experiments that point to
+                the next steps.
+                We finish this talk by discussing the importance of reducing the need or requirements for experimental
+                evaluations on real high-performance computing platforms.</p>
+
+            <hr>
+            <p id="talk_rauchwerger" class="title">Bounded Asynchrony and Nested Parallelism for Scalable Graph
+                Processing</p>
+            <p class="subtitle">Lawrence Rauchwerger, University of Illinois Urbana-Champaign</p>
+            <p>In this work we develop two broad techniques for improving the performance of graph traversals and
+                general parallel algorithms.
+                1. Bounded Asynchrony. Increasing asynchrony in a bounded manner allows one to avoid costly global syn-
+                chronization at scale, while still avoiding the penalty of unbounded asynchrony including redundant
+                work. In addition, asynchronous processing enables a new family of approximate algorithms when
+                applications are tolerant to a fixed amount of error.
+                2. Nested parallelism. Allowing to express graph algo- rithms in a naturally nested parallel manner
+                enables us to fully exploit all of the available parallelism inherent in graph algorithms.</p>
+
+            <hr>
+            <p id="talk_bohm" class="title">Hurricane Storm Surge Analysis and Prediction Using ADCIRC-CG and AMPI</p>
+            <p class="subtitle">Eric Bohm, University of Illinois Urbana-Champaign<br>Samuel White, University of
+                Illinois Urbana-Champaign<br>Joannes Westerink, Notre Dame University<br>Justin Szaday, University of
+                Illinois Urbana-Champaign<br>Damrongsak Wirasaet, Notre Dame University<br>Dylan Wood, Notre Dame
+                University</p>
+            <p>Storm-driven coastal flooding is influenced by many physical processes including riverine discharges,
+                regional rainfall, wind, atmospheric pressure, wave-induced set up, wave runup, tides, and fluctuating
+                baseline ocean water levels. Operational storm surge models such as NOAAâ€™s ESTOFS incorporate a
+                variety of these processes including riverine discharges, atmospheric winds and pressure, waves, and
+                tides. However, coastal surge models do not typically incorporate the impact of rainfall across the
+                coastal flood-plain nor fluctuations in background water levels due to the oceanic density structure.
+                Efficient simulation of these phenomena is challenging due to the dynamic load imbalance associated with
+                fluctuating water levels. This talk will review the science of accurately simulating these scenarios and
+                the initial progress that has been made in improving simulation efficiency by refactoring the ADCIRC-CG
+                code to use Adaptive MPI (AMPI).</p>
+
+            <hr>
+            <p id="talk_white" class="title">Recent Progress on Adaptive MPI</p>
+            <p class="subtitle">Samuel White, University of Illinois Urbana-Champaign<br>Evan Ramos, Charmworks, Inc.
+            </p>
+            <p>Adaptive MPI is a full-fledged MPI implementation on top of Charm++. As such, it provides the application
+                programming interface of MPI with the dynamic runtime features of Charm++. In this talk, we provide a
+                quick overview of AMPI and its features before discussing two directions of recent work on its
+                implementation: 1) collective communication optimizations taking advantage of shared memory and new
+                Charm++ semantics, and 2) automatic global variable privatization methods to enable running legacy
+                applications on AMPI.</p>
+
+            <hr>
+            <p id="talk_robson" class="title">Flexible Hierarchical Execution of Parallel Task Loops</p>
+            <p class="subtitle">Michael Robson, Villanova University<br>Kavitha Chandrasekar, University of Illinois
+                Urbana-Champaign</p>
+            <p>We demonstrate the effectiveness of combining the techniques of overdecomposition and work-sharing to
+                improve application performance. Our key insight is that tuning these two parameters in combination
+                optimizes performance by facilitating the trade off of communication overlap and overhead. We explore
+                this new space of potential optimization by varying both the problem size decomposition (grain size) and
+                number of cores assigned to execute a particular task (spreading). Utilizing these two variables in
+                concert, we can shape the execution timeline of applications in order to more smoothly inject messages
+                on the network, improve cache performance, and decrease the overall execution time of an application. As
+                single-node performance continues to outpace network bandwidth, ensuring smooth and continuous injection
+                of messages into the network will continue to be of crucial importance. Our preliminary results
+                demonstrate a greater than two-fold improvement in performance over a naive OpenMP-only baseline and a
+                thirty percent speedup over the previously best performing implementation of the same code.</p>
+
+            <hr>
+            <p id="talk_hardy" class="title">Improving NAMD Performance and Scaling on Heterogeneous Architectures</p>
+            <p class="subtitle">David Hardy, University of Illinois Urbana-Champaign<br>Julio Maia, University of
+                Illinois Urbana-Champaign</p>
+            <p>NAMD is a parallel molecular dynamics code designed for high-performance
+                simulation of large biomolecular systems. Given the diverse features and
+                methodologies available in NAMD, it is considered in the eld to be a major
+                biomolecular simulation engine, used by around 20,000 users, with many running
+                the code at various supercomputing facilities, including DOE and XSEDE
+                resources. NAMD is one of the premier Charm++ applications, and has been
+                developed in conjunction with Charm++ since the mid-90s. NAMD is also
+                the rst full-featured molecular dynamics code to adopt CUDA acceleration
+                for scaling on NVIDIA GPUs. Development eorts in both NAMD and
+                Charm++ have enabled scaling on heterogeneous architectures, most notably
+                on the ORNL Summit supercomputer.
+                In spite of the eorts taken to improve performance and scaling of NAMD
+                on Summit by ooading the force calculations to GPU, performance is limited
+                by the remaining CPU calculations required for time stepping. The overlap
+                between CPU and GPU calculations, that used to benet NAMD on earlier
+                CUDA-capable GPUs, became imbalanced as subsequent generation GPU performance
+                outpaced that of CPUs, making NAMD performance CPU-bound,
+                an eect that is exacerbated by multi-GPU nodes with fewer CPU cores dedicated
+                to each GPU. Development eorts over the past two years have improved
+                NAMD performance on GPUs by moving the remaining CPU work for each
+                time step to the GPU while reducing host-device memory transfers, changing
+                NAMD from employing a GPU-ooad strategy to a GPU-resident one, in which
+                data is maintained on the GPU across time steps. The result has been released
+                as NAMD version 3.0, featuring a fast single-GPU code path that doubles performance
+                by more fully utilizing the GPU with very little calculation remaining
+                on the CPU. This new simulation modality can be used together with the existing
+                multiple copy framework to scale smaller system sizes (under 1M atoms)
+                across all available GPUs in a parallel computer to achieve very large amounts
+                of aggregate sampling. Recent work, not yet available as production-quality
+                code, has succeeded in extending the single-GPU implementation to scale to
+                multiple GPUs on a single node.
+                There are important challenges to overcome in order to realize a scalable
+                GPU-resident version of NAMD. The PME (particle mesh Ewald) algorithm
+                for approximating long-range electrostatics poses an immediate issue for multi-
+                GPU scaling. The 3D FFTs are too small to parallelize eectively across multiple
+                GPUs, either through the use of direct multi-GPU support in cuFFT or
+                the manual assignment of pencils to GPUs along each dimension. The best alternative
+                for supporting PME appears to be assigning the FFTs together with
+                the reciprocal space calculation to a single GPU, which requires sending all
+                grid data to a designated GPU while taking care to not overload it. A better
+                approach appears to be replacing PME with the MSM (multilevel summation
+                method) an alternative algorithm yielding a similar approximation. The
+                hierarchical nature of the MSM calculation produces a scalable tree-like communication
+                structure with nearest neighbor communication at each level, much
+                like the well known FMM (fast multipole method). New theoretical development
+                reveals that the MSM can achieve the same order of accuracy as PME
+                through the use of periodic B-spline basis functions, while relegating the 3D
+                FFTs and reciprocal space calculation to the coarsest grid level, thus allowing
+                the FFT to be made as small as desired.
+                Another important challenge is how to reintroduce Charm++ eectively
+                into a GPU-resident NAMD for multi-node scaling. The current single-GPU
+                implementation side-steps NAMD's current Charm++ infrastructure, avoiding
+                extra latency by putting unused user-level threads to sleep. It might be possible
+                to employ the new Charm++ GPU direct messaging API to minimize CPU
+                involvement.
+        </div>
+    </section>
+
+    <!-- Organizers -->
+    <!-- Organizers -->
+    <section class="section is-family-primary" id="organizers">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-two-thirds">
+                    <p class="title has-text-weight-bold">About Us</p>
+                    Workshop Co-Chairs: <a href="https://charm.cs.illinois.edu/people/mdiener">Matthias Diener</a>, <a
+                        href="https://charm.cs.illinois.edu/people/jchoi">Jaemin Choi</a><br><br>
+                    <!--Co-sponsored by <a href="https://www.intel.com">Intel</a>, <a href="https://www.xilinx.com">Xilinx</a>, <a href="https://www.ncsa.illinois.edu">NCSA</a>, and <a href="https://charmplusplus.com/">Charmworks</a><br><br>-->
+                    Organized by the <a href="https://charm.cs.illinois.edu/">Parallel Programming Laboratory</a> at the
+                    <a href="https://illinois.edu/">University of Illinois Urbana-Champaign</a>
+                </div>
+                <div class="column">
+                    <p class="title has-text-weight-bold">Follow Us</p>
+                    <a href="https://www.facebook.com/charmplusplus">
+                        <span class="icon">
+                            <i class="fab fa-facebook-square"></i>
+                        </span>
+                    </a>
+                    <a href="https://twitter.com/CharmPlusPlus">
+                        <span class="icon">
+                            <i class="fab fa-twitter"></i>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

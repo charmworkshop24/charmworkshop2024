@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+  <head>
+    <!-- Header -->
+    <title>Charm++ Workshop 2024</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="scripts/scripts.js"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/site.webmanifest" />
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="img/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #organizers {
+        background-color: #f3eff6;
+      }
+
+      #about {
+        background-color: #f3eff6;
+      }
+
+      #dates {
+        background-color: #f3eff6;
+      }
+
+      .navbar .nav-link {
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation bar -->
+
+    <nav class="navbar navbar-expand-lg bg-white sticky-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="index.shtml"
+            ><strong> Charm++ Workshop 2024 </strong></a
+          >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.shtml"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.shtml#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="program.shtml">Program</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Information
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="index.shtml#dates"
+                    >Important Dates</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="index.shtml#speakers"
+                    >Keynote Speakers</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#organizers">Organizers</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="http://charm.cs.illinois.edu/workshops"
+                >Previous Workshops</a
+              >
+            </li>
+          </ul>
+          <div class="ml-auto">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-toggle="modal"
+              data-bs-target="#presentations"
+            >
+              <i class="bi bi-send-fill"></i>
+              <span>Call for Presentations</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Registration modal -->
+    <div
+      class="modal fade"
+      id="presentations"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="presentationsLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="presentationsLabel">
+              Call for Presentations
+            </h1>
+            <button
+              type="button"
+              class="btn"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="bi bi-x h3"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            Authors are invited to submit abstracts or short papers describing
+            research and development in the broad themes of parallel processing
+            emphasized by Charm++, AMPI, and Charm4Py including runtime
+            adaptivity, message-driven execution, automated resource management,
+            and application development.<br />
+            <hr />
+            Some specific topics of interest include:<br />
+            <dl>
+              <li>
+                Parallel algorithms and applications, especially those using
+                Charm++, AMPI, and Charm4Py
+              </li>
+              <li>
+                Parallel libraries and frameworks, especially those supporting
+                runtime adaptivity
+              </li>
+              <li>Novel parallel programming models and abstractions</li>
+              <li>
+                Adaptive runtime management, including communication, power,
+                energy, and heat
+              </li>
+              <li>Dynamic load balancing</li>
+              <li>Within-node parallelism, tasks, and accelerators</li>
+              <li>Fault tolerance and resilience</li>
+              <li>
+                Tools and techniques for performance analysis, tuning and
+                debugging
+              </li>
+              <li>Extensions and new features in Charm++</li>
+              <li>Massively parallel processing on future machines</li>
+            </dl>
+            <hr />
+            Submissions should be in the form of
+            <strong>extended abstracts ranging 1-3 pages</strong>.<br />
+            The <em>presentations</em> will be posted at the workshop website,
+            but there will be no published proceedings.<br />
+            Authors are encouraged to publish them in other conferences or
+            journals.<br /><br />
+            Abstracts should be submitted through
+            <a
+              href="https://easychair.org/conferences/?conf=charm20"
+              target="_blank"
+              >EasyChair</a
+            >
+            by the deadline, <strong>September 15, 2020</strong>.<br />
+            We ask that authors who submitted their abstract in Spring by email
+            resubmit through EasyChair.<br />
+            Early submission is welcome and will expedite the reviewing
+            process.<br />
+            Authors of early submissions will be notified of their acceptance as
+            soon as possible.<br /><br />
+            Please contact
+            <a href="mailto:mdiener@illinois.edu">Matthias Diener</a> if you
+            have any questions.<br />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullheight section -->
+
+    <section
+      class="bg-secondary text-center text-light"
+      style="
+        height: 100vh;
+        background-image: url(img/supercomputer.webp);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-blend-mode: overlay;
+      "
+    >
+      <div class="container-fluid p-4">
+        <p class="h4 p-3 text-dark">High Performance Computing with Charm++</p>
+        <p class="display-4 text-white">
+          <strong
+            >22<sup>nd</sup> Annual Workshop on <br />
+            Charm++ and Its Applications</strong
+          >
+        </p>
+        <p class="h5 text-light">
+          <!--
+          <span class="icon">
+            <i class="fas fa-calendar-alt"></i>
+          </span>
+          -->
+
+          October 20-21, 2020 <br />
+          University of Illinois Urbana-Champaign
+        </p>
+        <hr />
+        <p class="h5 border-top border-bottom p-4">
+          Thank you for your participation! Slides and videos are available in
+          the
+          <a class="text-arches" href="program.shtml" target="_blank">
+            Program
+          </a>
+        </p>
+        <hr />
+        <br />
+        <p class="h4 my-4">Keynote Speakers</p>
+        <!-- Space out the cards silly!
+        <div class="row mx-auto">
+          <a class="card" href="index.shtml#speaker1">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Keynote Speaker 1</h5>
+              <p class="card-text">I work here.</p>
+            </div>
+          </a>
+          <a class="card" href="index.shtml#speaker2">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Keynote Speaker 1</h5>
+              <p class="card-text">I work here.</p>
+            </div>
+          </a>
+          <a class="card" href="index.shtml#speaker3">
+            <img src="..." class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Keynote Speaker 1</h5>
+              <p class="card-text">I work here.</p>
+            </div>
+          </a>
+        </div> -->
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="bg-light" id="about">
+      <div class="container-fluid">
+        <div class="col-6">
+          <p class="h3 text-info">ABOUT</p>
+          <p class="display-4"><strong>The Charm++ Ecosystem</strong></p>
+          <p class="text-dark">
+            Charm++ is a C++ based parallel programming system based on an
+            introspective adaptive runtime system, with many features suitable
+            for addressing upcoming extreme scale as well as mid-scale
+            challenges, and with multiple highly scalable parallel applications
+            such as NAMD, ChaNGa, and OpenAtom.
+            <br /><br />
+            Our group's goal is to develop technology that improves performance
+            of parallel applications while also improving programmer
+            productivity. We aim to reach a point where, with our freely
+            distributed software base, complex irregular and dynamic
+            applications can (a) be developed quickly and (b) perform scalably
+            on machines with thousands of processors.
+          </p>
+        </div>
+        <div class="col-6">
+          <div class="box">
+            <figure class="image is-5by3">
+              <img src="img/servers.jpg" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Important dates -->
+    <section class="section is-family-primary" id="dates">
+      <p class="title has-text-centered has-text-weight-bold is-2">
+        Important Dates
+      </p>
+      <br />
+      <div class="container has-text-centered">
+        <table
+          class="table is-centered is-bordered is-striped is-hoverable is-fullwidth"
+        >
+          <thead class="has-background-warning">
+            <tr>
+              <th>Category</th>
+              <th>Dates</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Abstracts due</td>
+              <td>
+                <p style="color: gray" ;><strike>September 15, 2020</strike></p>
+                September 30, 2020
+              </td>
+            </tr>
+            <tr>
+              <td>Author notification</td>
+              <td>
+                <p style="color: gray" ;><strike>October 1, 2020</strike></p>
+                October 7, 2020 (rolling basis for early submissions)
+              </td>
+            </tr>
+            <tr>
+              <td>Workshop</td>
+              <td>October 20-21, 2020</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Speakers -->
+    <section class="section is-family-primary" id="speakers">
+      <p class="title has-text-centered has-text-weight-bold is-2">
+        Keynote Speakers
+      </p>
+      <br />
+      <div class="container">
+        <div class="box" id="speaker1">
+          <div class="columns is-vcentered">
+            <div class="column is-one-quarter">
+              <figure class="image is-3by4">
+                <img src="img/vetter.png" />
+              </figure>
+            </div>
+            <div class="column">
+              <p class="title has-text-weight-bold is-4">
+                <a
+                  href="https://ft.ornl.gov/~vetter"
+                  target="_blank"
+                  style="color: inherit"
+                  >Jeffrey S. Vetter</a
+                >
+              </p>
+              <p class="subtitle has-text-grey is-6">
+                Oak Ridge National Laboratory
+              </p>
+              <p class="has-text-grey-dark">
+                <em>
+                  Group Leader, Future Technologies Group, Computer Science and
+                  Mathematics Division
+                </em>
+                <br /><br />
+                Jeffrey Vetter, Ph.D., is a Corporate Fellow at Oak Ridge
+                National Laboratory (ORNL). At ORNL, he is currently the Section
+                Head for Advanced Computer Systems Research and the founding
+                director of the Experimental Computing Laboratory (ExCL).
+                Previously, Vetter was the founding group leader of the Future
+                Technologies Group in the Computer Science and Mathematics
+                Division from 2003 until 2020. Vetter earned his Ph.D. in
+                Computer Science from the Georgia Institute of Technology.
+                Vetter is a Fellow of the IEEE, and a Distinguished Scientist
+                Member of the ACM. In 2010, Vetter, as part of an
+                interdisciplinary team from Georgia Tech, NYU, and ORNL, was
+                awarded the ACM Gordon Bell Prize. In 2015, Vetter served as the
+                SC15 Technical Program Chair. His recent books, entitled
+                "Contemporary High Performance Computing: From Petascale toward
+                Exascale (Vols. 1 and 2)," survey the international landscape of
+                HPC. Learn more information at
+                <a
+                  href="https://ft.ornl.gov/~vetter/"
+                  target="_blank"
+                  style="color: inherit"
+                  >https://ft.ornl.gov/~vetter/</a
+                >.
+              </p>
+            </div>
+          </div>
+          <hr />
+          <br />
+          <p class="title has-text-weight-bold has-text-centered is-4">
+            Preparing for Extreme Heterogeneity in High Performance Computing
+          </p>
+          <br />
+          While computing technologies have remained relatively stable for
+          nearly two decades, new architectural features, such as heterogeneous
+          cores, deep memory hierarchies, non-volatile memory (NVM), and
+          near-memory processing, have emerged as possible solutions to address
+          the concerns of energy-efficiency and cost. However, we expect this
+          'golden age' of architectural change to lead to extreme heterogeneity
+          and it will have a major impact on software systems and applications.
+          Software will need to be redesigned to exploit these new capabilities
+          and provide some level of performance portability across these diverse
+          architectures. In this talk, I will survey these emerging
+          technologies, discuss their architectural and software implications,
+          and describe several new approaches (e.g., domain specific languages,
+          intelligent runtime systems) to address these challenges.
+        </div>
+
+        <div class="box" id="speaker2">
+          <div class="columns is-vcentered">
+            <div class="column is-one-quarter">
+              <figure class="image is-3by4">
+                <img src="img/kaiser.jpg" />
+              </figure>
+            </div>
+            <div class="column">
+              <p class="title has-text-weight-bold is-4">
+                <a
+                  href="https://www.cct.lsu.edu/~hkaiser"
+                  target="_blank"
+                  style="color: inherit"
+                  >Hartmut Kaiser</a
+                >
+              </p>
+              <p class="subtitle has-text-grey is-6">
+                Louisiana State University
+              </p>
+              <p class="has-text-grey-dark">
+                <em>
+                  Adjunct Assistant Professor, Department of Computer Science<br />
+                  Senior Research Scientist, Center for Computation and
+                  Technology
+                </em>
+                <br /><br />
+                Hartmut is a member of the faculty at the CS department at
+                Louisiana State University (LSU) and a senior research scientist
+                at LSU's Center for Computation and Technology (CCT). He
+                received his doctorate from the Technical University of Chemnitz
+                (Germany). He is probably best known through his involvement in
+                open source software projects, mainly as the author of several
+                C++ libraries he has contributed to Boost, which are in use by
+                C++ thousands of developers worldwide. He is a voting member of
+                the ISO C++ Standardization Committee. His current research is
+                focused on leading the STE||AR group at CCT working on the
+                practical design and implementation of future execution models
+                and programming abstractions. His research interests are focused
+                on the complex interaction of compiler technologies, runtime
+                systems, active libraries, and modern system's architectures.
+                His goal is to enable the creation of a new generation of
+                scientific applications in powerful, though complex
+                environments, such as high performance computing, distributed
+                computing, many task runtime systems, and compiler technologies.
+              </p>
+            </div>
+          </div>
+          <hr />
+          <br />
+          <p class="title has-text-weight-bold has-text-centered is-4">
+            Asynchronous Programming in Modern C++
+          </p>
+          <br />
+          With the advent of modern computer architectures characterized by
+          many-core nodes, deep and complex memory hierarchies, heterogeneous
+          subsystems, and power-aware components, it is becoming increasingly
+          difficult to achieve best possible application scalability and
+          satisfactory parallel efficiency. The community is experimenting with
+          new programming models that rely on finer-grain parallelism, flexible
+          and lightweight synchronization, combined with work-queue-based,
+          message-driven computation. The recently growing interest in the C++
+          programming language increases the demand for libraries implementing
+          those programming models for the language. We present a new
+          asynchronous C++ parallel programming model that is built around
+          lightweight tasks and mechanisms to orchestrate massively parallel and
+          distributed execution. This model uses the concept of Futures to make
+          data dependencies explicit, employs explicit and implicit asynchrony
+          to hide latencies and to improve utilization, and manages finer-grain
+          parallelism with a work-stealing scheduling system enabling automatic
+          load balancing of tasks. We have developed and implemented such a
+          model as a C++ library exposing a higher-level parallelism API that is
+          fully conforming to the existing C++11/14/17 standards and is aligned
+          with the ongoing standardization work. This API and programming model
+          has shown to enable writing highly efficient parallel applications for
+          heterogeneous resources with excellent performance and scaling
+          characteristics.
+        </div>
+
+        <div class="box" id="speaker3">
+          <div class="columns is-vcentered">
+            <div class="column is-one-quarter">
+              <figure class="image is-3by4">
+                <img src="img/mellor-crummey.jpg" />
+              </figure>
+            </div>
+            <div class="column">
+              <p class="title has-text-weight-bold is-4">
+                <a
+                  href="https://csweb.rice.edu/john-mellor-crummey"
+                  target="_blank"
+                  style="color: inherit"
+                  >John Mellor-Crummey</a
+                >
+              </p>
+              <p class="subtitle has-text-grey is-6">Rice University</p>
+              <p class="has-text-grey-dark">
+                <em>
+                  Professor of Computer Science and of Electrical and Computer
+                  Engineering
+                </em>
+                <br /><br />
+                John Mellor-Crummey is a Professor of Computer Science at Rice
+                University in Houston, TX. His research focuses on software
+                technology for high performance parallel computing. His current
+                research includes tools for measurement and analysis of
+                application performance, tools for dynamic data race detection,
+                and techniques for network performance analysis and
+                optimization. He leads the research and development of the
+                HPCToolkit Performance Tools, principally supported by the DOE
+                Exascale Computing Project. His past work has included
+                development of compilers and runtime systems for parallel
+                computing, scalable software synchronization algorithms for
+                shared-memory multiprocessors, and techniques for execution
+                replay of parallel programs. Mellor-Crummey has co-led
+                development of the OMPT tools interface for OpenMP 5. He is a
+                co-recipient of the 2006 Dijkstra Prize in Distributed Computing
+                and a Fellow of the ACM.
+              </p>
+            </div>
+          </div>
+          <hr />
+          <br />
+          <p class="title has-text-weight-bold has-text-centered is-4">
+            Towards Performance Tools for Emerging GPU-Accelerated Exascale
+            Supercomputers
+          </p>
+          <br />
+          To tune applications for emerging exascale supercomputers, application
+          developers need tools that measure the performance of applications on
+          GPU-accelerated platforms and attribute application performance back
+          to program source code. This talk will describe work in progress
+          developing extensions to Rice University's HPCToolkit performance
+          tools to support measurement and analysis of GPU-accelerated
+          applications on current supercomputers based on NVIDIA GPUs and
+          forthcoming exascale systems based on AMD and Intel GPUs. At present,
+          HPCToolkit's support for NVIDIA's GPUs is the most mature. To help
+          developers understand the performance of accelerated applications as a
+          whole, HPCToolkit's measurement and analysis tools attribute metrics
+          to calling contexts that span both CPUs and GPUs. HPCToolkit measures
+          both profiles and traces of GPU execution. To measure GPU-accelerated
+          applications efficiently, HPCToolkit employs novel wait-free data
+          structures to coordinate monitoring and attribution of GPU performance
+          metrics. To help developers understand the performance of complex GPU
+          code generated from high-level template-based programming models,
+          HPCToolkit's hpcprof constructs sophisticated approximations of call
+          path profiles for GPU computations. To support fine-grain analysis and
+          tuning, HPCToolkit uses platform-dependent hardware and software
+          measurement capabilities to attribute GPU performance metrics to
+          source lines and loops. We illustrate HPCToolkit's emerging
+          capabilities for analyzing GPU-accelerated applications with several
+          case studies.
+        </div>
+      </div>
+    </section>
+
+    <!-- Organizers -->
+    <!-- Organizers -->
+    <section class="is-family-primary" id="organizers">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-two-thirds">
+            <p class="title has-text-weight-bold">About Us</p>
+            Workshop Co-Chairs:
+            <a href="https://charm.cs.illinois.edu/people/mdiener"
+              >Matthias Diener</a
+            >,
+            <a href="https://charm.cs.illinois.edu/people/jchoi">Jaemin Choi</a
+            ><br /><br />
+            <!--Co-sponsored by <a href="https://www.intel.com">Intel</a>, <a href="https://www.xilinx.com">Xilinx</a>, <a href="https://www.ncsa.illinois.edu">NCSA</a>, and <a href="https://charmplusplus.com/">Charmworks</a><br><br>-->
+            Organized by the
+            <a href="https://charm.cs.illinois.edu/"
+              >Parallel Programming Laboratory</a
+            >
+            at the
+            <a href="https://illinois.edu/"
+              >University of Illinois Urbana-Champaign</a
+            >
+          </div>
+          <div class="column">
+            <p class="title has-text-weight-bold">Follow Us</p>
+            <a href="https://www.facebook.com/charmplusplus">
+              <span class="icon">
+                <i class="fab fa-facebook-square"></i>
+              </span>
+            </a>
+            <a href="https://twitter.com/CharmPlusPlus">
+              <span class="icon">
+                <i class="fab fa-twitter"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
