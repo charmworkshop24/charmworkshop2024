@@ -93,7 +93,18 @@
             <li class="nav-item">
               <a class="nav-link" href="program.html">Program</a>
             </li>
-
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="index.html#presentations"
+              >
+                <!-- <i class="bi bi-send-fill"></i> -->
+                <div class="text-danger">
+                  <strong>Call for Presentations</strong>
+                </div></a
+              >
+            </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -125,7 +136,7 @@
               </ul>
             </li>
           </ul>
-          <div class="ml-auto">
+          <!-- <div class="ml-auto">
             <button
               type="button"
               class="btn btn-secondary"
@@ -135,12 +146,12 @@
               <i class="bi bi-send-fill"></i>
               <span>Call for Presentations</span>
             </button>
-          </div>
+          </div> -->
         </div>
       </div>
     </nav>
 
-    <!-- Registration modal -->
+    <!-- Registration modal
     <div
       class="modal fade"
       id="presentations"
@@ -150,7 +161,7 @@
       aria-labelledby="presentationsLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="presentationsLabel">
@@ -166,11 +177,11 @@
             </button>
           </div>
           <div class="modal-body">
-            Authors are invited to submit abstracts or short papers describing
-            research and development in the broad themes of parallel processing
-            emphasized by Charm++, AMPI, and Charm4Py including runtime
-            adaptivity, message-driven execution, automated resource management,
-            and application development.<br />
+            Authors are invited to submit abstracts describing research and
+            development in the broad themes of parallel processing emphasized by
+            Charm++, AMPI, and Charm4Py including runtime adaptivity,
+            message-driven execution, task-based scheduling, automated resource
+            management, and applications using these themes..<br />
             <hr />
             Some specific topics of interest include:<br />
             <dl>
@@ -199,7 +210,8 @@
             </dl>
             <hr />
             Submissions should be in the form of
-            <strong>extended abstracts ranging 1-3 pages</strong>.<br />
+            <strong>extended abstracts ranging 1-3 pages</strong>.
+            <br />
             The <em>presentations</em> will be posted at the workshop website,
             but there will be no published proceedings.<br />
             Authors are encouraged to publish them in other conferences or
@@ -210,16 +222,11 @@
               target="_blank"
               >EasyChair</a
             >
-            by the deadline, <strong>September 15, 2020</strong>.<br />
-            We ask that authors who submitted their abstract in Spring by email
-            resubmit through EasyChair.<br />
-            Early submission is welcome and will expedite the reviewing
-            process.<br />
-            Authors of early submissions will be notified of their acceptance as
-            soon as possible.<br /><br />
-            Please contact
-            <a href="mailto:mdiener@illinois.edu">Matthias Diener</a> if you
-            have any questions.<br />
+            by the deadline, <strong>TODO</strong>.<br />
+            Early submissions are welcome and will expedite the reviewing
+            process. Authors of early submissions will be notified of their
+            acceptance within a week.<br />
+            Please contact TODO if you have any questions.<br />
           </div>
           <div class="modal-footer">
             <button
@@ -232,7 +239,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <!-- Fullheight section -->
     <section
@@ -310,7 +317,14 @@
         <div class="row p-4">
           <div class="col col-lg">
             <p class="h5 text-info">ABOUT</p>
-            <p class="h3"><strong>The Charm++ Ecosystem</strong></p>
+
+            <p class="h4"><strong>The Charm++ Workshop</strong></p>
+            The workshop is broadly focused on adaptivity in highly scalable
+            parallel computing. It also takes stock of recent results in
+            adaptive runtime techniques in Charm++ and the collaborative
+            interdisciplinary research projects developed using it.
+            <hr />
+            <p class="h4"><strong>The Charm++ Ecosystem</strong></p>
             Charm++ is a C++ based parallel programming system based on an
             introspective adaptive runtime system, with many features suitable
             for addressing upcoming extreme scale as well as mid-scale
@@ -352,11 +366,11 @@
               </tr>
               <tr>
                 <td>Author Notification</td>
-                <td>TBD</td>
+                <td>Rolling Acceptance</td>
               </tr>
               <tr>
                 <td scope="row">Workshop</td>
-                <td>TBD</td>
+                <td>April 25-26</td>
               </tr>
             </tbody>
           </table>
@@ -365,10 +379,71 @@
     </section>
 
     <!-- Speakers -->
-    <section class="bg-dark" id="speakers">
+    <section class="bg-secondary" id="speakers">
       <div class="container">
         <div class="col col-lg p-4">
           <p class="h5 text-info">KEYNOTE SPEAKERS (TBD)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call for Presentations -->
+    <section class="p-2 bg-white" id="presentations">
+      <div class="container" style="opacity: 1 !important">
+        <div class="col col-lg p-4">
+          <p class="h5 text-info">CALL FOR PRESENTATIONS</p>
+          <div class="text-dark">
+            Authors are invited to submit abstracts describing research and
+            development in the broad themes of parallel processing emphasized by
+            Charm++, AMPI, and Charm4Py including runtime adaptivity,
+            message-driven execution, task-based scheduling, automated resource
+            management, and applications using these themes..<br />
+            <hr />
+            Some specific topics of interest include:<br />
+            <dl>
+              <li>
+                Parallel algorithms and applications, especially those using
+                Charm++, AMPI, and Charm4Py
+              </li>
+              <li>
+                Parallel libraries and frameworks, especially those supporting
+                runtime adaptivity
+              </li>
+              <li>Novel parallel programming models and abstractions</li>
+              <li>
+                Adaptive runtime management, including communication, power,
+                energy, and heat
+              </li>
+              <li>Dynamic load balancing</li>
+              <li>Within-node parallelism, tasks, and accelerators</li>
+              <li>Fault tolerance and resilience</li>
+              <li>
+                Tools and techniques for performance analysis, tuning and
+                debugging
+              </li>
+              <li>Extensions and new features in Charm++</li>
+              <li>Massively parallel processing on future machines</li>
+            </dl>
+            <hr />
+            Submissions should be in the form of
+            <strong>extended abstracts ranging 1-3 pages</strong>.
+            <br />
+            The <em>presentations</em> will be posted at the workshop website,
+            but there will be no published proceedings.<br />
+            Authors are encouraged to publish them in other conferences or
+            journals.<br /><br />
+            Abstracts should be submitted through
+            <a
+              href="https://easychair.org/conferences/?conf=charm20"
+              target="_blank"
+              >EasyChair</a
+            >
+            by the deadline, <strong>TODO</strong>.<br />
+            Early submissions are welcome and will expedite the reviewing
+            process. Authors of early submissions will be notified of their
+            acceptance within a week.<br />
+            Please contact TODO if you have any questions.<br />
+          </div>
         </div>
       </div>
     </section>
