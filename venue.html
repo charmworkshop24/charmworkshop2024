@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="has-navbar-fixed-top">
+  <head>
+    <!-- Header -->
+    <title>Charm++ Workshop 2024</title>
+    <link rel="stylesheet" href="styles/bootstrap.min.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="scripts/scripts.js"></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link rel="manifest" href="img/site.webmanifest" />
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="msapplication-config" content="img/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      #organizers {
+        background-color: #f3eff6;
+      }
+
+      #about {
+        background-color: #f3eff6;
+      }
+
+      #dates {
+        background-color: #f3eff6;
+      }
+
+      .navbar .nav-link {
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Navigation bar -->
+
+    <!-- Navigation bar -->
+
+    <nav class="navbar navbar-expand bg-white sticky-top">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a class="navbar-brand" href="index.html"
+            ><strong> Charm++ Workshop 2024 </strong></a
+          >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#about">About</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="program.html">Program</a>
+            </li> -->
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="index.html#presentations"
+              >
+                <!-- <i class="bi bi-send-fill"></i> -->
+                <div class="text-danger">
+                  <strong>Call for Presentations</strong>
+                </div></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="venue.html">
+                <!-- <i class="bi bi-send-fill"></i> -->
+                Venue
+              </a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Information
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="index.html#dates"
+                    >Important Dates</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="index.html#speakers"
+                    >Keynote Speakers</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://charm.cs.illinois.edu/workshops"
+                    >Previous Workshops</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <!-- <div class="ml-auto">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-toggle="modal"
+            data-bs-target="#presentations"
+          >
+            <i class="bi bi-send-fill"></i>
+            <span>Call for Presentations</span>
+          </button>
+        </div> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Registration modal -->
+    <div
+      class="modal fade"
+      id="presentations"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="presentationsLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="presentationsLabel">
+              Call for Presentations
+            </h1>
+            <button
+              type="button"
+              class="btn"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <i class="bi bi-x h3"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            Authors are invited to submit abstracts or short papers describing
+            research and development in the broad themes of parallel processing
+            emphasized by Charm++, AMPI, and Charm4Py including runtime
+            adaptivity, message-driven execution, automated resource management,
+            and application development.<br />
+            <hr />
+            Some specific topics of interest include:<br />
+            <dl>
+              <li>
+                Parallel algorithms and applications, especially those using
+                Charm++, AMPI, and Charm4Py
+              </li>
+              <li>
+                Parallel libraries and frameworks, especially those supporting
+                runtime adaptivity
+              </li>
+              <li>Novel parallel programming models and abstractions</li>
+              <li>
+                Adaptive runtime management, including communication, power,
+                energy, and heat
+              </li>
+              <li>Dynamic load balancing</li>
+              <li>Within-node parallelism, tasks, and accelerators</li>
+              <li>Fault tolerance and resilience</li>
+              <li>
+                Tools and techniques for performance analysis, tuning and
+                debugging
+              </li>
+              <li>Extensions and new features in Charm++</li>
+              <li>Massively parallel processing on future machines</li>
+            </dl>
+            <hr />
+            Submissions should be in the form of
+            <strong>extended abstracts ranging 1-3 pages</strong>.<br />
+            The <em>presentations</em> will be posted at the workshop website,
+            but there will be no published proceedings.<br />
+            Authors are encouraged to publish them in other conferences or
+            journals.<br /><br />
+            Abstracts should be submitted through
+            <a
+              href="https://easychair.org/conferences/?conf=charm20"
+              target="_blank"
+              >EasyChair</a
+            >
+            by the deadline, <strong>September 15, 2020</strong>.<br />
+            We ask that authors who submitted their abstract in Spring by email
+            resubmit through EasyChair.<br />
+            Early submission is welcome and will expedite the reviewing
+            process.<br />
+            Authors of early submissions will be notified of their acceptance as
+            soon as possible.<br /><br />
+            Please contact
+            <a href="mailto:mdiener@illinois.edu">Matthias Diener</a> if you
+            have any questions.<br />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Program-->
+    <section class="bg-secondary" id="program">
+      <div class="container text-light">
+        <div class="row">
+          <div class="col col-6 p-4">
+            <p class="h5 text-info">VENUE</p>
+            <p class="text-light">
+              <a href="https://illinois.edu/"
+                >University of Illinois Urbana-Champaign</a
+              >
+              <br />
+              <a href="https://www.siebelcenter.illinois.edu/"
+                >Thomas M. Siebel Center for Computer Science</a
+              >
+              (Room 2405)
+            </p>
+
+            <hr class="bg-light" />
+            While in-person attendance is encouraged, remote participation will
+            be supported via live-streaming.
+          </div>
+          <div class="col col-6 p-4">
+            <div class="card card-cascade narrower">
+              <div class="card-body card-body-cascade text-center">
+                <div
+                  id="map-container-google-7"
+                  class="z-depth-1-half map-container-5 w-100"
+                >
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      class="embed-responsive-item"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3051.2780389560353!2d-88.22748012385401!3d40.11380687402041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880cd76baa8479a9%3A0x4e9f01d40d359630!2sThomas%20M.%20Siebel%20Center%20for%20Computer%20Science!5e0!3m2!1sen!2sus!4v1709570602125!5m2!1sen!2sus"
+                      style="border: 0"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--add a section for housing with a map to the hotel-->
+    <section class="bg-white" id="accomodations">
+      <div class="container text-dark">
+        <div class="row">
+          <div class="col col-6 p-4">
+            <div class="card card-cascade narrower">
+              <div class="card-body card-body-cascade text-center">
+                <div
+                  id="map-container-google-8"
+                  class="z-depth-1-half map-container-5 w-100"
+                >
+                  <div class="embed-responsive embed-responsive-16by9">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2647.038769407998!2d-88.22797625207252!3d40.11542553814573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880cd7698fb6fab9%3A0x875c9f4ea808d863!2sHampton%20Inn%20Champaign%2FUrbana%20(at%20University%20of%20Illinois)!5e0!3m2!1sen!2sus!4v1709571437072!5m2!1sen!2sus"
+                      width="600"
+                      height="450"
+                      style="border: 0"
+                      allowfullscreen=""
+                      loading="lazy"
+                      referrerpolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col col-6 p-4">
+            <p class="h5 text-info">ACCOMODATIONS</p>
+            <p class="text-dark">
+              <a
+                href="https://www.hilton.com/en/hotels/cmiilhx-hampton-champaign-urbana/"
+                >Hampton Inn Champaign/Urbana</a
+              >
+              <br />
+              1200 W University Ave
+              <br />
+              Urbana, Illinois 61801
+              <br />
+              <hr>
+              The Hampton Inn Champaign/Urbana is located just a few blocks from the Siebel Center for Computer Science, where the workshop will be held. 
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Organizers-->
+    <!-- Organizers -->
+    <footer class="bg-light" id="organizers">
+      <div class="container">
+        <div class="col col-lg p-4">
+          <p class="h5 text-info">ORGANIZERS</p>
+          Workshop Co-Chairs: Zane Fink and TBD
+          <br />
+          Organized by:
+          <a href="https://charm.cs.illinois.edu/"
+            >Parallel Programming Laboratory</a
+          >
+          at the
+          <a href="https://illinois.edu/"
+            >University of Illinois Urbana-Champaign</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
