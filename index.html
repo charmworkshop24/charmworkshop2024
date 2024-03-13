@@ -35,6 +35,7 @@
     <link rel="manifest" href="img/site.webmanifest" />
     <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5" />
     <link rel="shortcut icon" href="img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="msapplication-config" content="img/browserconfig.xml" />
     <meta name="theme-color" content="#ffffff" />
@@ -138,7 +139,7 @@
                 >Program</a
               >
             </li> -->
-            <li class="nav-item" style="padding-left: 10px">
+            <li class="nav-item pl-lg-1">
               <!-- button to submit to the EasyChair link-->
               <a
                 class="btn btn-danger"
@@ -298,7 +299,7 @@
     <section class="bg-light" style="scroll-margin-top: 56px" id="about">
       <div class="container">
         <div class="row p-4">
-          <div class="col col-md-7">
+          <div class="col-lg-7">
             <p class="h5 text-info">ABOUT</p>
 
             <p class="h4"><strong>The Charm++ Workshop</strong></p>
@@ -323,7 +324,7 @@
             applications can (a) be developed quickly and (b) perform scalably
             on machines with thousands of processors.
           </div>
-          <div class="col col-md-5 m-1 mx-auto">
+          <div class="col-lg-5 m-1 mx-auto d-none d-lg-block">
             <img
               src="img/super.jpg"
               class="img-fluid img-thumbnail h-100"
@@ -375,7 +376,14 @@
 
           <!-- Keynote Speakers -->
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-lg-4 d-lg-none">
+              <img
+                src="img/Bader-2022-square.jpg"
+                class="p-3 img-fluid my-auto mx-auto"
+                alt="David Bader"
+              />
+            </div>
+            <div class="col-lg-8">
               <p class="h4 text-light" id="davidbader">
                 <strong>David A. Bader</strong>
               </p>
@@ -415,8 +423,7 @@
               </button>
               <hr />
             </div>
-
-            <div class="col-md-4">
+            <div class="col-lg-4 d-none d-lg-block">
               <img
                 src="img/Bader-2022-square.jpg"
                 class="p-3 img-fluid my-auto mx-auto"
